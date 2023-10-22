@@ -13,3 +13,4 @@ Underdogprotocol.com
 
 Lastly make sure to install all the required js libraries in your project. 
    
+Once you run the js. Make a SOL(or SPL token) transfer that contains the customer account and your webhook should grab that data,mint, and transfer SOL.

@@ -4,15 +4,15 @@ const bodyParser = require('body-parser');
 
 const sdk = require('api')('@underdog/v2.0#b56qhmt17lnnslr0u');
 
-sdk.auth('6d995013ad5cd2.de5e890d141e4f2eb028d35dd922e69a');// put back to ENV var.
+sdk.auth('underGroundAuth key');// replace 
 sdk.server('https://devnet.underdogprotocol.com');
 
 const app = express();
 const port = 3000;
 
 let nftId; //the id underground generates after minting NFT to be sent to the customer.
-const customerAccount="FQWz9u4rjUtSm1FbjKm8rDbjoKjdWLcToKVcDmwHu7NL"; //the customer acct we listen to on Helius and where we send NFT
-const heliusUrl = `https://mainnet.helius-rpc.com/?api-key=6e2a4999-9008-4a86-9ac0-47a0701d97af`;//replace API keys with yours
+const customerAccount="customerWallet"; //the customer acct we listen to on Helius and where we send NFT
+const heliusUrl = `https://mainnet.helius-rpc.com/?api-key=HeliusKEY`;//replace API keys with yours
 
 app.use(bodyParser.json());
 
@@ -65,7 +65,7 @@ const mintUndergroundNFT = async () => {
       name: 'Christ NFT',
       symbol: 'ChrisNFT',
       image: 'www.yahoo.com/imagw', // Replace with the actual image URL.
-      receiverAddress: '8DoEBo8UNi3MZbaneqD2UdDV7jbktwZVV9Hv8xoTt52r', // The mint address (yours acct not customer acct)
+      receiverAddress: 'addresshere', // The mint address (yours acct not customer acct)
       delegated: true, // If this is not true, Underground won't be able to transfer NFTs so transferNFT will fail.
       description: 'Gaming NFT',
       upsert: true
